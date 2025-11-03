@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Sidebar Menu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="menu-bar">
+
+  <!-- Header and Menu Button -->
+  <div class="menu-toggle" id="menuToggle">☰ Menu</div>
+
+  <!-- Sidebar -->
+  <div class="menu-bar" id="menuBar">
+    <div class="close-btn" id="closeBtn">✖</div>
     <ul>
-        <li class="active"><i class='bx  bx-home-heart'    ></i> <a href="#">Home</a></li>
-        <li><a href="#"><i class='bx  bx-user'    ></i> About as </a>
-           <div class="sub-menu-1">
-            <ul>
-                <li><a href="">Mission</a></li>
-                <li><a href="">Vission</a></li>
-                <li><a href="">Team</a></li>
-            </ul>
-
-
-           </div>
-        </li>
-        <li><a href="#"><i class='bx  bx-message'    ></i> Service</a>
-         <div class="sub-menu-1">
-            <ul>
-                <li><a href="">Web desiging</a></li>
-                <li class="hover-me"><a href="">Marketing</a>
-                <div class="sub-menu-2">
-                    <ul>
-                        <li><a href="">SEO</a></li>
-                        <li><a href="">Social Media</a></li>
-                        <li><a href="">Email Marketing</a></li>
-                   </ul>
-                </div>
-                </li>
-                <li class="hover-me"><a href="">Mobile App</a>
-                 <div class="sub-menu-2">
-                    <ul>
-                        <li><a href="">Andoraid</a></li>
-                        <li><a href="">ios app</a></li>
-                        <li><a href="">iconic app</a></li>
-                        <li><a href="">fultter app</a></li>
-                        <li><a href="">unity app</a></li>
-
-                   </ul>
-                </div>
-                </li>
-            </ul>
-
-
-           </div></li>
-        <li><a href="#"><i class='bx  bx-user'    ></i> Clients</a></li>
-        <li><a href="#"><i class='bx  bx-coin'    ></i> Investers</a></li>
-        <li><a href="#"><i class='bx  bx-price-tag'    ></i> pricing</a></li>
-        <li><a href="#"><i class='bx  bx-share'    ></i> Training</a></li>
-        <li><a href="#"><i class='bx  bx-phone'    ></i> Contact</a></li>
-
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li>
+        <a href="#">Services ▾</a>
+        <div class="sub-menu-1">
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li class="hover-me">
+              <a href="#">Mobile App▸</a>
+              <div class="sub-menu-2">
+                <ul>
+                  <li><a href="#">Android</a></li>
+                  <li><a href="#">ios</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">SEO</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">Contact</a></li>
     </ul>
-    </div>
+  </div>
+
+  <!-- JavaScript for toggle -->
+  <script>
+    const menuBar = document.getElementById('menuBar');
+    const menuToggle = document.getElementById('menuToggle');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuToggle.addEventListener('click', () => {
+      menuBar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menuBar.classList.remove('active');
+    });
+  </script>
+
 </body>
 </html>
