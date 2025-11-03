@@ -1,79 +1,166 @@
-*{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background-image: url(./img2.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: sans-serif;
 }
-body{
-   background-image: url(./img2.jpg);
-   background-position: center;
-   background-size: cover;
-   font-family: sans-serif;
-}
-.menu-bar{
-   background-color: rgb(0,100,0 ); 
-   text-align: center;
-}
-.menu-bar ul{
-   display: inline-flex;
-   list-style: none;
-   color: white;
-}
-.menu-bar ul li{
-   width: 120px;
-   margin: 15px;
-   padding: 15px;
-}
-.menu-bar ul li a{
-   text-decoration: none;
-   color:white
-}
-.active, .menu-bar ul li:hover{
-   background:#2bab0d;
-   border-radius: 3px;   
-}
-.menu-bar .bx{
-     margin-right: 3px;
-}
-.sub-menu-1{
-   display: none;
 
+/* ===== Desktop Sidebar Menu ===== */
+.menu-bar {
+  background-color: rgb(0, 100, 0);
+  text-align: center;
+  transition: all 0.4s ease;
 }
-.menu-bar ul li:hover .sub-menu-1{
-   display: block;
-   position: absolute;
-   background: rgb(0,100,0);
-   margin-top: 15px;
-   margin-left: -15px;
-   border-radius: 3px;
-}
-.menu-bar ul li:hover .sub-menu-1 ul{
-   display: block;
-   margin: 10px;
-}
-.menu-bar ul li:hover .sub-menu-1 ul li{
-   width: 150px;
-   padding: 10px;
-   border-bottom: white;
-   background: transparent;
-   border-radius: 0;
-   text-align: left;
 
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+  color: white;
 }
-.menu-bar ul li:hover .sub-menu-1 ul li:lastchild{
-   border-bottom: none;
+
+.menu-bar ul li {
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+  position: relative;
 }
-.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
-   color: #2bab0d;
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
 }
-.sub-menu-2{
-   display: none;
+
+.active,
+.menu-bar ul li:hover {
+  background: #2bab0d;
+  border-radius: 3px;
 }
-.hover-me:hover .sub-menu-2{
-   display: block;
-   position: absolute;
-   background: rgb(0,100,0);
-   margin-top: -40px;
-   margin-left: 150px;
-   border-radius: 3px;
-}  
+
+/* ===== Submenus ===== */
+.sub-menu-1,
+.sub-menu-2 {
+  display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background: rgb(0, 100, 0);
+  margin-top: 15px;
+  margin-left: -15px;
+  border-radius: 3px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+  width: 150px;
+  padding: 10px;
+  text-align: left;
+  background: transparent;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+  color: #2bab0d;
+}
+
+.hover-me:hover .sub-menu-2 {
+  display: block;
+  position: absolute;
+  background: rgb(0, 100, 0);
+  margin-top: -40px;
+  margin-left: 150px;
+  border-radius: 3px;
+}
+
+/* ===== Menu Toggle Button ===== */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  background: rgb(0, 100, 0);
+  padding: 15px;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* ===== Close Button inside Sidebar ===== */
+.close-btn {
+  display: none;
+  font-size: 25px;
+  color: white;
+  text-align: right;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* ===== Mobile View ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-bar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background: rgb(0, 100, 0);
+    flex-direction: column;
+    text-align: left;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .menu-bar.active {
+    left: 0;
+  }
+
+  .menu-bar ul {
+    display: block;
+    width: 100%;
+  }
+
+  .menu-bar ul li {
+    width: 100%;
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-bar ul li a {
+    display: block;
+    width: 100%;
+    color: white;
+  }
+
+  .sub-menu-1,
+  .sub-menu-2 {
+    position: relative;
+    background: rgba(0, 80, 0, 0.9);
+    margin: 0;
+  }
+
+  .menu-bar ul li:hover .sub-menu-1 {
+    margin: 0;
+  }
+
+  .hover-me:hover .sub-menu-2 {
+    margin: 0;
+  }
+
+  .close-btn {
+    display: block;
+  }
+}
