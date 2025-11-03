@@ -3,56 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Sidebar Menu</title>
+  <title>Responsive Slide Navbar</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Toggle Button for Mobile -->
+  <div class="menu-toggle" id="menu-toggle">☰ Menu</div>
 
-  <!-- Header and Menu Button -->
-  <div class="menu-toggle" id="menuToggle">☰ Menu</div>
-
-  <!-- Sidebar -->
-  <div class="menu-bar" id="menuBar">
-    <div class="close-btn" id="closeBtn">✖</div>
+  <!-- Sidebar Menu -->
+  <div class="menu-bar" id="menu-bar">
+    <div class="close-btn" id="close-btn">✖</div>
     <ul>
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
       <li>
-        <a href="#">Services ▾</a>
+        <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#">Services</a>
         <div class="sub-menu-1">
           <ul>
             <li><a href="#">Web Design</a></li>
+            <li><a href="#">App Development</a></li>
             <li class="hover-me">
-              <a href="#">Mobile App▸</a>
+              <a href="#">More ▸</a>
               <div class="sub-menu-2">
                 <ul>
-                  <li><a href="#">Android</a></li>
-                  <li><a href="#">ios</a></li>
+                  <li><a href="#">SEO</a></li>
+                  <li><a href="#">Marketing</a></li>
+                  <li><a href="#">Branding</a></li>
                 </ul>
               </div>
             </li>
-            <li><a href="#">SEO</a></li>
           </ul>
         </div>
       </li>
-      <li><a href="#">Contact</a></li>
+      <li>
+        <a href="#">Gallery</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
     </ul>
   </div>
 
-  <!-- JavaScript for toggle -->
   <script>
-    const menuBar = document.getElementById('menuBar');
-    const menuToggle = document.getElementById('menuToggle');
-    const closeBtn = document.getElementById('closeBtn');
+    // ===== Menu Toggle Script =====
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuBar = document.getElementById("menu-bar");
+    const closeBtn = document.getElementById("close-btn");
 
-    menuToggle.addEventListener('click', () => {
-      menuBar.classList.add('active');
+    menuToggle.addEventListener("click", () => {
+      menuBar.classList.add("active");
     });
 
-    closeBtn.addEventListener('click', () => {
-      menuBar.classList.remove('active');
+    closeBtn.addEventListener("click", () => {
+      menuBar.classList.remove("active");
     });
   </script>
-
 </body>
 </html>
